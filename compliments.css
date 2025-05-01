@@ -1,0 +1,174 @@
+/* Compliments Page Styles */
+.compliments-container {
+    padding: 3rem 2rem;
+    min-height: calc(100vh - 7rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compliments-title {
+    color: var(--primary-color);
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.3);
+    position: relative;
+}
+
+.compliments-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 5px;
+}
+
+.compliments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.compliment-card {
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+    border-radius: 20px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.compliment-card:hover,
+.compliment-card.flipped,
+.compliment-card.flipped-permanent {
+    transform: rotateY(180deg) scale(1.05);
+    z-index: 10;
+}
+
+.compliment-front,
+.compliment-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.compliment-front {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.compliment-back {
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px dashed var(--primary-color);
+}
+
+.compliment-card[data-color="pink"] .compliment-back {
+    background: linear-gradient(135deg, #ffb6c1, #ffdde1);
+    border-color: #ff6b9d;
+}
+
+.compliment-card[data-color="blue"] .compliment-back {
+    background: linear-gradient(135deg, #a6d8ff, #d1e9ff);
+    border-color: #6bbcff;
+}
+
+.compliment-card[data-color="purple"] .compliment-back {
+    background: linear-gradient(135deg, #d5b8ff, #e6d7ff);
+    border-color: #b36bff;
+}
+
+.compliment-card[data-color="orange"] .compliment-back {
+    background: linear-gradient(135deg, #ffcba6, #ffe5d1);
+    border-color: #ffa76b;
+}
+
+.compliment-card[data-color="green"] .compliment-back {
+    background: linear-gradient(135deg, #b8ffd5, #d7ffe6);
+    border-color: #6bffa7;
+}
+
+.compliment-card[data-color="teal"] .compliment-back {
+    background: linear-gradient(135deg, #a6ffed, #d1fff7);
+    border-color: #6bffe4;
+}
+
+.card-number {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hover-hint {
+    position: absolute;
+    bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.compliment-card:hover .hover-hint {
+    opacity: 0;
+}
+
+.compliment-text {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.compliment-front::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 107, 157, 0.2);
+    transition: all 0.5s ease;
+}
+
+.compliment-front::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 107, 157, 0.2);
+    transition: all 0.5s ease;
+}
+
+.compliment-card:hover .compliment-front::before {
+    transform: scale(3);
+    opacity: 0;
+}
+
+.compliment-card:hover .compliment-front::after {
+    transform: scale(3);
+    opacity: 0;
+}

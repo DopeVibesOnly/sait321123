@@ -1,0 +1,264 @@
+
+.predictions-container {
+    padding: 4rem 2rem;
+    min-height: calc(100vh - 7rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #fff0ff 0%, #f1e8ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.predictions-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 107, 157, 0.07) 0%, transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(179, 107, 255, 0.07) 0%, transparent 30%),
+        radial-gradient(circle at 30% 70%, rgba(255, 107, 157, 0.07) 0%, transparent 25%),
+        radial-gradient(circle at 70% 80%, rgba(179, 107, 255, 0.07) 0%, transparent 30%);
+    z-index: 0;
+}
+
+.predictions-title {
+    color: var(--primary-color);
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: 3px 3px 6px rgba(255, 107, 157, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.predictions-subtitle {
+    color: var(--text-color);
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    opacity: 0.9;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+}
+
+.predictions-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 5px;
+}
+
+.fortune-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Simplified Crystal Ball */
+.crystal-ball-wrapper {
+    position: relative;
+    width: 280px;
+    height: 350px;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    padding: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        inset 0 0 50px rgba(255, 107, 157, 0.1);
+    transition: all 0.4s ease;
+}
+
+.crystal-ball {
+    position: relative;
+    width: 220px;
+    height: 300px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 3;
+}
+
+.crystal-glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 70% 30%, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(210, 235, 255, 0.8) 20%, 
+        rgba(180, 180, 255, 0.7) 50%,
+        rgba(150, 130, 250, 0.8) 80%);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.2), 
+        inset 0 0 60px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.crystal-shine {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 50px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    filter: blur(5px);
+    opacity: 0.7;
+}
+
+.crystal-clouds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.4) 0%, transparent 40%);
+    filter: blur(5px);
+    opacity: 0.6;
+}
+
+.crystal-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 80px;
+    background: linear-gradient(to bottom, #b39ddb, #7e57c2);
+    border-radius: 50% / 30%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Prediction Result */
+.prediction-result {
+    width: 100%;
+    max-width: 700px;
+    min-height: 120px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 107, 157, 0.2);
+    transition: all 0.4s ease;
+}
+
+.prediction-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Beautiful Prediction Button */
+.prediction-button {
+    position: relative;
+    padding: 1.2rem 3rem;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #ff6b9d, #ff4b8d);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.prediction-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(255, 107, 157, 0.5);
+}
+
+.prediction-button:active {
+    transform: translateY(-2px);
+}
+
+.prediction-button.clicked {
+    animation: button-pulse 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes button-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Romantic Note */
+.romantic-note {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 107, 157, 0.2);
+}
+
+.note-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.note-signature {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    display: block;
+    text-align: right;
+    margin-top: 1rem;
+}
+
+/* Simplified animations */
+@keyframes simple-glow {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes prediction-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

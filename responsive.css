@@ -1,0 +1,121 @@
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        margin: 0;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .logo-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .nav-item {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .greeting-card {
+        padding: 2rem;
+    }
+    
+    .greeting-card h1 {
+        font-size: 2rem;
+    }
+    
+    .message {
+        font-size: 1rem;
+    }
+    
+    .flower-container {
+        transform: scale(0.8);
+    }
+    
+    .flower-container.right {
+        transform: scale(0.8) scaleX(-1);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-title {
+        font-size: 2.8rem;
+    }
+    
+    .gallery-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-quote {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .quote-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .compliments-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .compliments-title {
+        font-size: 2.2rem;
+    }
+    
+    .compliment-card {
+        height: 180px;
+    }
+    
+    .compliment-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-frame {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .gallery-title {
+        font-size: 2.4rem;
+    }
+    
+    .gallery-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .gallery-quote {
+        padding: 1rem;
+    }
+    
+    .quote-text {
+        font-size: 1.3rem;
+    }
+}
+

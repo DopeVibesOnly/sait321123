@@ -1,0 +1,12 @@
+/* Main stylesheet that imports all component styles */
+@import 'css/variables.css';
+@import 'css/base.css';
+@import 'css/header.css';
+@import 'css/main-content.css';
+@import 'css/compliments.css';
+@import 'css/gallery.css';
+@import 'css/predictions.css';
+@import 'css/animations.css';
+@import 'css/responsive.css';
+
+/* All styles have been moved to separate files */
